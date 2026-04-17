@@ -9,7 +9,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from lib.config import SERPER_API_KEY, SERPER_URL, get_metro, get_output_dir
-from lib.taxonomy import SEARCH_QUERIES
+from lib.taxonomy import SEARCH_QUERIES, ZIP_SEARCH_QUERIES
 
 
 def serper_search(query, num_results=10):
@@ -132,6 +132,7 @@ def main(metro_key="houston"):
     all_orgs = list(existing_orgs)
     queries_run = 0
 
+    # City-level queries
     for template in SEARCH_QUERIES:
         query = template.replace("{CITY}", city).replace("{COUNTY}", county)
         if query in searched_queries:
@@ -147,7 +148,29 @@ def main(metro_key="houston"):
 
         if queries_run % 10 == 0:
             print(f"  {queries_run} queries | {len(all_orgs)} raw orgs")
-        time.sleep(0.3)  # gentle pace
+        time.sleep(0.1)
+
+    # ZIP-level queries for denser coverage
+    zip_codes = metro.get("zip_codes", [])
+    if zip_codes:
+        print(f"\nZIP search: {len(zip_codes)} ZIPs x {len(ZIP_SEARCH_QUERIES)} queries...")
+        for zc in zip_codes:
+            for template in ZIP_SEARCH_QUERIES:
+                query = template.replace("{ZIP}", zc)
+                if query in searched_queries:
+                    continue
+                category = infer_category(template)
+                results = serper_search(query, num_results=5)
+                queries_run += 1
+
+                for r in results:
+                    org = extract_org_from_result(r, query, category)
+                    if org["name"]:
+                        all_orgs.append(org)
+
+                if queries_run % 50 == 0:
+                    print(f"  {queries_run} queries | {len(all_orgs)} raw orgs")
+            time.sleep(0.05)
 
     # Deduplicate
     unique_orgs = deduplicate_orgs(all_orgs)

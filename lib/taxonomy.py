@@ -158,3 +158,16 @@ SEARCH_QUERIES = [
     "{CITY} emergency shelter services",
     "{CITY} shelter housing referral",
 ]
+
+# ZIP-based search queries - higher coverage for neighborhood-level orgs
+# {ZIP} is replaced at runtime with each ZIP code
+ZIP_SEARCH_QUERIES = [
+    "{ZIP} transitional housing",
+    "{ZIP} homeless services nonprofit",
+    "{ZIP} group home placement",
+    "{ZIP} supportive housing",
+    "{ZIP} sober living recovery housing",
+    "{ZIP} disability housing services",
+    "{ZIP} veteran housing assistance",
+    "{ZIP} reentry housing program",
+]

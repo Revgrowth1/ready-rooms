@@ -2,12 +2,14 @@
 
 from .taxonomy import TARGET_POPULATIONS
 
-# Weights
+# Weights - funding lowered because operational roles (discharge planners,
+# housing navigators) score low on funding but are our highest-value contacts.
+# Decision-maker and contactability boosted to reward actionable leads.
 W_REFERRAL = 0.30
 W_POPULATION = 0.25
-W_DECISION = 0.20
-W_FUNDING = 0.15
-W_CONTACT = 0.10
+W_DECISION = 0.25
+W_FUNDING = 0.05
+W_CONTACT = 0.15
 
 
 def score_contactability(contact):
