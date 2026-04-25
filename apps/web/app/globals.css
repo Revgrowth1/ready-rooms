@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, monospace;
+
+  /* Background + surface */
+  --color-cream: #fbf8f2;
+  --color-cream-50: #fdfbf6;
+  --color-cream-line: #efe8d8;
+
+  /* Text */
+  --color-stone-warm: #1f2c3d;
+  --color-stone-soft: #5d6878;
+  --color-stone-line: #d6dde6;
+
+  /* Brand blue (from logo "Rooms" wordmark) */
+  --color-brand-blue: #2876c8;
+  --color-brand-blue-deep: #1c5b9d;
+  --color-brand-blue-soft: #e0ecf7;
+  --color-brand-blue-pale: #f3f8fc;
+
+  /* Brand orange (from logo "Ready" wordmark + door) */
+  --color-brand-orange: #e88239;
+  --color-brand-orange-deep: #c66622;
+  --color-brand-orange-soft: #fceadb;
+
+  /* Sun glow (from logo background) */
+  --color-warm-glow: #fde9c4;
+
+  /* Semantic */
+  --color-error: #b15a3f;
+  --color-error-soft: #f4dfd6;
+
+  --color-background: var(--color-cream);
+  --color-foreground: var(--color-stone-warm);
+}
+
+:root {
+  --background: var(--color-cream);
+  --foreground: var(--color-stone-warm);
+}
+
+html, body {
+  background: var(--color-cream);
+  color: var(--color-stone-warm);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
+
+input, textarea, select, button {
+  font-family: inherit;
+}
+
+@layer base {
+  h1, h2, h3, h4 {
+    color: var(--color-stone-warm);
+    letter-spacing: -0.015em;
+  }
+  ::selection {
+    background: var(--color-brand-blue-soft);
+    color: var(--color-brand-blue-deep);
+  }
+}
