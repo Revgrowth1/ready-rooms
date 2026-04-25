@@ -4,16 +4,33 @@
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, monospace;
 
-  --color-cream: #f9f6f1;
-  --color-cream-50: #fbf9f5;
-  --color-stone-warm: #2a2723;
-  --color-stone-soft: #6b665f;
-  --color-stone-line: #e9e3d8;
-  --color-sage: #5b8a72;
-  --color-sage-deep: #3f6952;
-  --color-sage-soft: #e7efe9;
-  --color-amber-warm: #c08552;
-  --color-rust: #b15a3f;
+  /* Background + surface */
+  --color-cream: #fbf8f2;
+  --color-cream-50: #fdfbf6;
+  --color-cream-line: #efe8d8;
+
+  /* Text */
+  --color-stone-warm: #1f2c3d;
+  --color-stone-soft: #5d6878;
+  --color-stone-line: #d6dde6;
+
+  /* Brand blue (from logo "Rooms" wordmark) */
+  --color-brand-blue: #2876c8;
+  --color-brand-blue-deep: #1c5b9d;
+  --color-brand-blue-soft: #e0ecf7;
+  --color-brand-blue-pale: #f3f8fc;
+
+  /* Brand orange (from logo "Ready" wordmark + door) */
+  --color-brand-orange: #e88239;
+  --color-brand-orange-deep: #c66622;
+  --color-brand-orange-soft: #fceadb;
+
+  /* Sun glow (from logo background) */
+  --color-warm-glow: #fde9c4;
+
+  /* Semantic */
+  --color-error: #b15a3f;
+  --color-error-soft: #f4dfd6;
 
   --color-background: var(--color-cream);
   --color-foreground: var(--color-stone-warm);
@@ -46,7 +63,7 @@ input, textarea, select, button {
     letter-spacing: -0.015em;
   }
   ::selection {
-    background: var(--color-sage-soft);
-    color: var(--color-sage-deep);
+    background: var(--color-brand-blue-soft);
+    color: var(--color-brand-blue-deep);
   }
 }

@@ -76,7 +76,7 @@ export default async function IntakeDetailPage({
               id="status"
               name="status"
               defaultValue={i.status}
-              className="rounded-md border border-stone-line bg-cream-50 px-3 py-2 text-sm focus:border-sage focus:outline-none focus:ring-2 focus:ring-sage/30"
+              className="rounded-md border border-stone-line bg-cream-50 px-3 py-2 text-sm focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/30"
             >
               {Object.entries(STATUS_LABELS).map(([k, v]) => (
                 <option key={k} value={k}>
@@ -86,7 +86,7 @@ export default async function IntakeDetailPage({
             </select>
             <button
               type="submit"
-              className="rounded-md bg-sage px-3 py-2 text-sm font-medium text-cream hover:bg-sage-deep transition-colors"
+              className="rounded-md bg-brand-blue px-3 py-2 text-sm font-medium text-cream hover:bg-brand-blue-deep transition-colors"
             >
               Update
             </button>

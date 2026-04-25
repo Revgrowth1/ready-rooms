@@ -12,7 +12,7 @@ export default function ReferPage() {
       <main className="flex-1">
         <div className="mx-auto max-w-3xl px-6 py-12">
           <header className="mb-10">
-            <p className="text-xs uppercase tracking-[0.2em] text-stone-soft">
+            <p className="text-xs font-medium uppercase tracking-[0.25em] text-brand-blue-deep">
               New referral
             </p>
             <h1 className="mt-2 text-3xl font-semibold tracking-tight">

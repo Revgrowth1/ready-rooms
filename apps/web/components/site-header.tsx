@@ -36,7 +36,7 @@ export async function SiteHeader() {
         >
           <span
             aria-hidden
-            className="inline-block h-2.5 w-2.5 rounded-full bg-sage"
+            className="inline-block h-2.5 w-2.5 rounded-full bg-brand-blue"
           />
           Ready Rooms
         </Link>
@@ -73,7 +73,7 @@ export async function SiteHeader() {
           ) : (
             <Link
               href="/login"
-              className="rounded-full bg-sage px-4 py-1.5 text-sm font-medium text-cream hover:bg-sage-deep transition-colors"
+              className="rounded-full bg-brand-blue px-4 py-1.5 text-sm font-medium text-cream hover:bg-brand-blue-deep transition-colors"
             >
               Sign in
             </Link>

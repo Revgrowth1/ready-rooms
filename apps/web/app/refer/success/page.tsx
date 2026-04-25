@@ -17,7 +17,7 @@ export default async function ReferSuccessPage({
       <SiteHeader />
       <main className="flex flex-1 items-center justify-center px-6 py-16">
         <div className="w-full max-w-lg text-center">
-          <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-sage-soft text-sage-deep">
+          <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-brand-blue-soft text-brand-blue-deep">
             <svg
               aria-hidden
               viewBox="0 0 24 24"

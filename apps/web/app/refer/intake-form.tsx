@@ -37,7 +37,7 @@ export function IntakeForm() {
               autoComplete="off"
             />
             {err("client_first_name") && (
-              <p className="text-xs text-rust">{err("client_first_name")}</p>
+              <p className="text-xs text-error">{err("client_first_name")}</p>
             )}
           </Field>
           <Field label="Last name" htmlFor="client_last_name" required>
@@ -48,7 +48,7 @@ export function IntakeForm() {
               autoComplete="off"
             />
             {err("client_last_name") && (
-              <p className="text-xs text-rust">{err("client_last_name")}</p>
+              <p className="text-xs text-error">{err("client_last_name")}</p>
             )}
           </Field>
 
@@ -66,7 +66,7 @@ export function IntakeForm() {
               placeholder="1968"
             />
             {err("client_dob_year") && (
-              <p className="text-xs text-rust">{err("client_dob_year")}</p>
+              <p className="text-xs text-error">{err("client_dob_year")}</p>
             )}
           </Field>
 
@@ -117,7 +117,7 @@ export function IntakeForm() {
               placeholder="e.g. St. Vincent Discharge Planning"
             />
             {err("referral_source_org") && (
-              <p className="text-xs text-rust">{err("referral_source_org")}</p>
+              <p className="text-xs text-error">{err("referral_source_org")}</p>
             )}
           </Field>
 
@@ -149,7 +149,7 @@ export function IntakeForm() {
               placeholder="Houston"
             />
             {err("preferred_city") && (
-              <p className="text-xs text-rust">{err("preferred_city")}</p>
+              <p className="text-xs text-error">{err("preferred_city")}</p>
             )}
           </Field>
 
@@ -163,7 +163,7 @@ export function IntakeForm() {
               className="uppercase"
             />
             {err("preferred_state") && (
-              <p className="text-xs text-rust">{err("preferred_state")}</p>
+              <p className="text-xs text-error">{err("preferred_state")}</p>
             )}
           </Field>
 
@@ -205,7 +205,7 @@ export function IntakeForm() {
               placeholder="943"
             />
             {err("monthly_income") && (
-              <p className="text-xs text-rust">{err("monthly_income")}</p>
+              <p className="text-xs text-error">{err("monthly_income")}</p>
             )}
           </Field>
 
@@ -243,7 +243,7 @@ export function IntakeForm() {
       </section>
 
       {state?.message ? (
-        <div className="rounded-md border border-rust/40 bg-rust/5 px-4 py-3 text-sm text-rust">
+        <div className="rounded-md border border-error/40 bg-error/5 px-4 py-3 text-sm text-error">
           {state.message}
         </div>
       ) : null}
@@ -256,7 +256,7 @@ export function IntakeForm() {
         <button
           type="submit"
           disabled={pending}
-          className="shrink-0 rounded-md bg-sage px-5 py-2.5 font-medium text-cream shadow-sm hover:bg-sage-deep disabled:opacity-60 transition-colors"
+          className="shrink-0 rounded-md bg-brand-blue px-5 py-2.5 font-medium text-cream shadow-sm hover:bg-brand-blue-deep disabled:opacity-60 transition-colors"
         >
           {pending ? "Submitting..." : "Submit referral"}
         </button>

@@ -16,7 +16,7 @@ export function Field({ label, htmlFor, hint, required, children }: FieldProps) 
         className="block text-sm font-medium text-stone-warm"
       >
         {label}
-        {required ? <span className="ml-1 text-rust">*</span> : null}
+        {required ? <span className="ml-1 text-error">*</span> : null}
       </label>
       {children}
       {hint ? <p className="text-xs text-stone-soft">{hint}</p> : null}
@@ -25,7 +25,7 @@ export function Field({ label, htmlFor, hint, required, children }: FieldProps) 
 }
 
 const inputBase =
-  "block w-full rounded-md border border-stone-line bg-cream-50 px-3 py-2 text-stone-warm placeholder:text-stone-soft/70 shadow-sm focus:border-sage focus:outline-none focus:ring-2 focus:ring-sage/30 transition";
+  "block w-full rounded-md border border-stone-line bg-cream-50 px-3 py-2 text-stone-warm placeholder:text-stone-soft/70 shadow-sm focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/30 transition";
 
 export function TextInput(props: React.InputHTMLAttributes<HTMLInputElement>) {
   return <input {...props} className={`${inputBase} ${props.className ?? ""}`} />;

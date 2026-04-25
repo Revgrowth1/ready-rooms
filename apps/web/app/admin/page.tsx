@@ -58,7 +58,7 @@ export default async function AdminPage() {
           <div className="rounded-2xl border border-dashed border-stone-line bg-cream-50 px-6 py-16 text-center">
             <p className="text-stone-soft">
               No referrals yet. Submit one from the{" "}
-              <Link href="/refer" className="text-sage-deep hover:underline">
+              <Link href="/refer" className="text-brand-blue-deep hover:underline">
                 referral form
               </Link>
               .
@@ -113,7 +113,7 @@ export default async function AdminPage() {
                     <td className="px-4 py-3 text-right">
                       <Link
                         href={`/admin/${i.id}`}
-                        className="text-sage-deep hover:underline"
+                        className="text-brand-blue-deep hover:underline"
                       >
                         Open &rarr;
                       </Link>
@@ -131,10 +131,10 @@ export default async function AdminPage() {
 
 function StatusBadge({ status }: { status: keyof typeof STATUS_LABELS }) {
   const styles: Record<string, string> = {
-    new: "bg-amber-warm/15 text-amber-warm",
-    reviewing: "bg-sage-soft text-sage-deep",
-    matched: "bg-sage text-cream",
-    placed: "bg-sage-deep text-cream",
+    new: "bg-brand-orange-soft text-brand-orange-deep",
+    reviewing: "bg-brand-blue-soft text-brand-blue-deep",
+    matched: "bg-brand-blue text-cream",
+    placed: "bg-brand-blue-deep text-cream",
     closed: "bg-stone-line text-stone-soft",
   };
   return (

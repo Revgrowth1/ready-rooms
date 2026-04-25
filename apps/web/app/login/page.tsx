@@ -32,7 +32,7 @@ export default async function LoginPage({
 
           <p className="mt-6 text-center text-sm text-stone-soft">
             New here?{" "}
-            <Link href="/" className="text-sage-deep hover:underline">
+            <Link href="/" className="text-brand-blue-deep hover:underline">
               Learn how Ready Rooms works
             </Link>
           </p>

@@ -33,7 +33,7 @@ export function LoginForm({ next }: { next: string }) {
       <button
         type="submit"
         disabled={pending}
-        className="w-full rounded-md bg-sage px-4 py-2.5 font-medium text-cream shadow-sm hover:bg-sage-deep disabled:opacity-60 transition-colors"
+        className="w-full rounded-md bg-brand-blue px-4 py-2.5 font-medium text-cream shadow-sm hover:bg-brand-blue-deep disabled:opacity-60 transition-colors"
       >
         {pending ? "Sending link..." : "Send sign-in link"}
       </button>
@@ -41,7 +41,7 @@ export function LoginForm({ next }: { next: string }) {
       {state?.message ? (
         <p
           className={`text-sm ${
-            state.message.startsWith("Check") ? "text-sage-deep" : "text-rust"
+            state.message.startsWith("Check") ? "text-brand-blue-deep" : "text-error"
           }`}
         >
           {state.message}
