@@ -1,21 +1,30 @@
 import Link from "next/link";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, isSupabaseConfigured } from "@/lib/supabase/server";
 import { signOut } from "@/app/login/actions";
 
 export async function SiteHeader() {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
+  let user: { email?: string } | null = null;
   let role: string | null = null;
-  if (user) {
-    const { data: profile } = await supabase
-      .from("profiles")
-      .select("role")
-      .eq("id", user.id)
-      .maybeSingle();
-    role = profile?.role ?? null;
+
+  if (isSupabaseConfigured()) {
+    try {
+      const supabase = await createClient();
+      const {
+        data: { user: u },
+      } = await supabase.auth.getUser();
+      user = u ?? null;
+
+      if (user) {
+        const { data: profile } = await supabase
+          .from("profiles")
+          .select("role")
+          .eq("id", (u as { id: string }).id)
+          .maybeSingle();
+        role = profile?.role ?? null;
+      }
+    } catch {
+      // Supabase unreachable - render public header
+    }
   }
 
   return (
