@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, monospace;
+
+  --color-cream: #f9f6f1;
+  --color-cream-50: #fbf9f5;
+  --color-stone-warm: #2a2723;
+  --color-stone-soft: #6b665f;
+  --color-stone-line: #e9e3d8;
+  --color-sage: #5b8a72;
+  --color-sage-deep: #3f6952;
+  --color-sage-soft: #e7efe9;
+  --color-amber-warm: #c08552;
+  --color-rust: #b15a3f;
+
+  --color-background: var(--color-cream);
+  --color-foreground: var(--color-stone-warm);
+}
+
+:root {
+  --background: var(--color-cream);
+  --foreground: var(--color-stone-warm);
+}
+
+html, body {
+  background: var(--color-cream);
+  color: var(--color-stone-warm);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
+
+input, textarea, select, button {
+  font-family: inherit;
+}
+
+@layer base {
+  h1, h2, h3, h4 {
+    color: var(--color-stone-warm);
+    letter-spacing: -0.015em;
+  }
+  ::selection {
+    background: var(--color-sage-soft);
+    color: var(--color-sage-deep);
+  }
+}
